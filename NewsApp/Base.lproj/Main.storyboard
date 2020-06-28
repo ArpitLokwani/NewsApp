@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F55-py-Ube">
+                                <rect key="frame" x="0.0" y="33" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBt-dy-8GW">
+                                        <rect key="frame" x="89" y="0.0" width="236" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="7Sj-My-TsO"/>
+                                            <constraint firstAttribute="width" constant="236" id="nZn-Ik-vkk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p31-2S-WLo">
+                                        <rect key="frame" x="359" y="15" width="48" height="30"/>
+                                        <state key="normal" title="French">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="languageChangeBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NFF-6J-W9E"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QBt-dy-8GW" firstAttribute="centerX" secondItem="F55-py-Ube" secondAttribute="centerX" id="08h-lh-Pol"/>
+                                    <constraint firstAttribute="bottom" secondItem="p31-2S-WLo" secondAttribute="bottom" constant="15" id="8DC-Yh-0XM"/>
+                                    <constraint firstItem="p31-2S-WLo" firstAttribute="top" secondItem="F55-py-Ube" secondAttribute="top" constant="15" id="SPq-2d-ew5"/>
+                                    <constraint firstAttribute="trailing" secondItem="p31-2S-WLo" secondAttribute="trailing" constant="7" id="kMz-zm-7Jd"/>
+                                    <constraint firstItem="QBt-dy-8GW" firstAttribute="centerY" secondItem="F55-py-Ube" secondAttribute="centerY" id="oeJ-8l-lY8"/>
+                                    <constraint firstAttribute="height" constant="60" id="xSV-hN-uzL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIm-ok-USO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oXi-Oq-KgQ">
+                                <rect key="frame" x="0.0" y="93" width="414" height="803"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oXi-Oq-KgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5rw-Ai-BWd"/>
+                            <constraint firstAttribute="bottom" secondItem="oXi-Oq-KgQ" secondAttribute="bottom" id="Ctp-sR-Hfq"/>
+                            <constraint firstItem="F55-py-Ube" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I3j-tJ-Yam"/>
+                            <constraint firstAttribute="trailing" secondItem="SIm-ok-USO" secondAttribute="trailing" id="NXy-3T-GcN"/>
+                            <constraint firstItem="SIm-ok-USO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VMC-EJ-sy4"/>
+                            <constraint firstItem="F55-py-Ube" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VbS-89-cwz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="F55-py-Ube" secondAttribute="top" constant="11" id="YYm-lt-Cbj"/>
+                            <constraint firstItem="oXi-Oq-KgQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eE8-WX-P9Y"/>
+                            <constraint firstItem="SIm-ok-USO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hPp-Jp-ZH6"/>
+                            <constraint firstItem="F55-py-Ube" firstAttribute="top" secondItem="SIm-ok-USO" secondAttribute="bottom" constant="-3" id="rD7-Be-AEc"/>
+                            <constraint firstItem="oXi-Oq-KgQ" firstAttribute="top" secondItem="F55-py-Ube" secondAttribute="bottom" id="vmt-Ex-5zk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="newsTableView" destination="oXi-Oq-KgQ" id="6BN-eM-jgp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="154.6875"/>
         </scene>
     </scenes>
 </document>

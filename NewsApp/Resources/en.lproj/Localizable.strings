@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  NewsApp
+
+  Created by Arpit Lokwani on 27/06/20.
+  Copyright © 2020 Arpit Lokwani. All rights reserved.
+*/
+
+"Title" = "Title:";
+"Author" = "Author:";
+"Description" = "Description:";
